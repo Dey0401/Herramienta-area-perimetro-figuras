@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCuadrilatero.cs" />
+    <Compile Include="clsPligono.cs" />
     <Compile Include="clsFgura2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
