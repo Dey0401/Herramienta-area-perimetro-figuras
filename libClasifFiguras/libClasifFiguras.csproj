@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{007315C1-5720-463E-93BA-F75F5987B2B8}</ProjectGuid>
+    <ProjectGuid>{162CEA7F-9A43-4799-8B3C-E15EDE897C02}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>libFigura2D</RootNamespace>
-    <AssemblyName>libFigura2D</AssemblyName>
+    <RootNamespace>libClasifFiguras</RootNamespace>
+    <AssemblyName>libClasifFiguras</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="libFigura2D">
+      <HintPath>..\libFigura2D\libFigura2D\bin\Debug\libFigura2D.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsFgura2D.cs" />
+    <Compile Include="ClasifFiguras.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
