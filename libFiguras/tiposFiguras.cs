@@ -77,8 +77,8 @@ namespace libFiguras
              return false; 
             try
             {
-                float h = fltLado1 * (float)Math.Sin((fltAngulo));
-
+                float h = fltLado2 * (float)Math.Sin((fltAngulo) * 180f / Math.PI);
+                fltArea = fltLado2 * h / 2f;
                 return true;
             }
             catch (Exception ex)
@@ -90,11 +90,195 @@ namespace libFiguras
 
         public override bool hallaPerimetro()
         {
+            float vrA = 0;
             if (!validar())
                 return false;
             try
             {
+                vrA = (float)(Math.Sqrt(Math.Pow(fltLado1,2)+ Math.Pow(fltLado2, 2)-
+                    2f * fltLado1 * fltLado2 * Math.Cos(fltAngulo)*180f / Math.PI));
+                fltPerimetro = fltLado1 + fltLado2 + vrA;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strError = ex.Message;
+                return false;
+            }
+        }
+        #endregion
+    }
 
+    public class ClsRectangulo : clsPoligono
+    {
+        #region Atribues
+        private float fltLado2;
+        #endregion
+
+        #region Constructor
+        public ClsRectangulo()
+        {
+            fltLado1 = 0;
+            fltLado2 = 0;
+            fltArea = 0;
+            fltPerimetro = 0;
+            strError = string.Empty;
+        }
+
+        public ClsRectangulo(float Lado1, float Lado2)
+        {
+            fltLado1 = Lado1;
+            fltLado2 = Lado2;
+            fltArea = 0;
+            fltPerimetro = 0;
+            strError = string.Empty;
+        }
+        #endregion
+
+        #region Properties
+        public float Lado2
+        { set => fltLado2 = value; }
+
+        #endregion
+
+        #region Privates Methots 
+        private bool validar()
+        {
+            if (fltLado1 <= 0)
+            {
+                strError = "Error, lado uno no valido";
+                return false;
+            }
+
+            else if (fltLado2 <= 0)
+            {
+                strError = "Error, lado dos no valido";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        #endregion
+
+        #region Public Methots
+        public override bool hallaArea()
+        {
+            if (!validar())
+                return false;
+            try
+            {
+                fltArea = fltLado1  * fltLado2;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strError = ex.Message;
+                return false;
+            }
+        }
+
+        public override bool hallaPerimetro()
+        {
+ 
+            if (!validar())
+                return false;
+            try
+            {
+                fltPerimetro = 2f * fltLado1 + 2f * fltLado2;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strError = ex.Message;
+                return false;
+            }
+        }
+        #endregion
+    }
+
+    public class ClsRombo : clsPoligono
+    {
+        #region Atribues
+        private float fltDDiagonalMenor;
+        private float fltDiagonalMayor;
+        #endregion
+
+        #region Constructor
+        public ClsRombo()
+        {
+            fltDDiagonalMenor = 0;
+            fltDiagonalMayor = 0;
+            fltArea = 0;
+            fltPerimetro = 0;
+            strError = string.Empty;
+        }
+
+        public ClsRombo(float DiagonalMenor, float DiagonalMayor)
+        {
+            fltDDiagonalMenor = DiagonalMenor;
+            fltDiagonalMayor = DiagonalMayor;
+            fltArea = 0;
+            fltPerimetro = 0;
+            strError = string.Empty;
+        }
+        #endregion
+
+        #region Properties
+        public float Lado2
+        { set => fltLado2 = value; }
+
+        #endregion
+
+        #region Privates Methots 
+        private bool validar()
+        {
+            if (fltLado1 <= 0)
+            {
+                strError = "Error, lado uno no valido";
+                return false;
+            }
+
+            else if (fltLado2 <= 0)
+            {
+                strError = "Error, lado dos no valido";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        #endregion
+
+        #region Public Methots
+        public override bool hallaArea()
+        {
+            if (!validar())
+                return false;
+            try
+            {
+                fltArea = fltLado1 * fltLado2;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strError = ex.Message;
+                return false;
+            }
+        }
+
+        public override bool hallaPerimetro()
+        {
+
+            if (!validar())
+                return false;
+            try
+            {
+                fltPerimetro = 2f * fltLado1 + 2f * fltLado2;
                 return true;
             }
             catch (Exception ex)
