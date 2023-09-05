@@ -209,17 +209,19 @@ namespace libFiguras
         #region Constructor
         public ClsRombo()
         {
-            fltDDiagonalMenor = 0;
-            fltDiagonalMayor = 0;
+            FltDDiagonalMenor = 0;
+            FltDiagonalMayor = 0;
+            fltLado1 = 0;
             fltArea = 0;
             fltPerimetro = 0;
             strError = string.Empty;
         }
 
-        public ClsRombo(float DiagonalMenor, float DiagonalMayor)
+        public ClsRombo(float DiagonalMenor, float DiagonalMayor, float Lado1)
         {
-            fltDDiagonalMenor = DiagonalMenor;
-            fltDiagonalMayor = DiagonalMayor;
+            FltDDiagonalMenor = DiagonalMenor;
+            FltDiagonalMayor = DiagonalMayor;
+            fltLado1 = Lado1;
             fltArea = 0;
             fltPerimetro = 0;
             strError = string.Empty;
@@ -227,9 +229,10 @@ namespace libFiguras
         #endregion
 
         #region Properties
-        public float Lado2
-        { set => fltLado2 = value; }
-
+        public float FltDDiagonalMenor 
+        { set => fltDDiagonalMenor = value; }
+        public float FltDiagonalMayor 
+        { set => fltDiagonalMayor = value; }
         #endregion
 
         #region Privates Methots 
@@ -237,13 +240,18 @@ namespace libFiguras
         {
             if (fltLado1 <= 0)
             {
-                strError = "Error, lado uno no valido";
+                strError = "Error, lado no valido";
                 return false;
             }
 
-            else if (fltLado2 <= 0)
+            else if (fltDDiagonalMenor <= 0)
             {
-                strError = "Error, lado dos no valido";
+                strError = "Error, diagonal menor no valida";
+                return false;
+            }
+            else if (fltDiagonalMayor <= 0)
+            {
+                strError = "Error, diagonal mayor no valida";
                 return false;
             }
             else
@@ -261,7 +269,7 @@ namespace libFiguras
                 return false;
             try
             {
-                fltArea = fltLado1 * fltLado2;
+                fltArea = (fltDiagonalMayor* fltDDiagonalMenor) / 2;
                 return true;
             }
             catch (Exception ex)
@@ -278,7 +286,7 @@ namespace libFiguras
                 return false;
             try
             {
-                fltPerimetro = 2f * fltLado1 + 2f * fltLado2;
+                fltPerimetro = 4*fltLado1;
                 return true;
             }
             catch (Exception ex)
