@@ -42,6 +42,15 @@ namespace webPractica2
         protected global::System.Web.UI.WebControls.Image imgFiguras;
 
         /// <summary>
+        /// lblMsj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsj;
+
+        /// <summary>
         /// pnlTriangulo control.
         /// </summary>
         /// <remarks>

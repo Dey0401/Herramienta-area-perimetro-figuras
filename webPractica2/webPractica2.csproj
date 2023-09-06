@@ -44,6 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="libClasifFiguras">
+      <HintPath>..\libFiguras\bin\Debug\libClasifFiguras.dll</HintPath>
+    </Reference>
+    <Reference Include="libFigura2D">
+      <HintPath>..\libFigura2D\libFigura2D\bin\Debug\libFigura2D.dll</HintPath>
+    </Reference>
+    <Reference Include="libFiguras">
+      <HintPath>..\libFiguras\bin\Debug\libFiguras.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -126,6 +135,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Imagenes\rectangulo.jpg" />
+    <Content Include="Imagenes\rombo.jpg" />
+    <Content Include="Imagenes\triangulo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -219,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
