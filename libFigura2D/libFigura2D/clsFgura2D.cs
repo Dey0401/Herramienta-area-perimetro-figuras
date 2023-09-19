@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace libFigura2D
 {
@@ -34,7 +35,24 @@ namespace libFigura2D
         #region Methots public
         public abstract bool hallaArea();
         public abstract bool hallaPerimetro();
-        
+        public bool guardar(string tipoFigura , string tipoOpera, float valor)
+        {
+            
+            try
+            {
+                using (StreamWriter escritor = new StreamWriter(tipoFigura+".txt", true)) // El parámetro "true" indica modo de anexar
+                {
+                    escritor.WriteLine(valor + "-" + tipoOpera);
+                }
+                return true;
+            }
+            catch (IOException e)
+            {
+                strError = "Error al escribir en el archivo: ";
+                return false;
+            }
+        }
+
         #endregion
 
 

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using libClasifFiguras;
 namespace libFiguras
+    
 {
     public class ClsTriangulo : clsPoligono
     {
@@ -161,6 +163,8 @@ namespace libFiguras
             }
 
         }
+
+
         #endregion
 
         #region Public Methots
@@ -171,6 +175,7 @@ namespace libFiguras
             try
             {
                 fltArea = fltLado1  * fltLado2;
+                guardar("rectangulo", "area", fltArea);
                 return true;
             }
             catch (Exception ex)
@@ -188,6 +193,7 @@ namespace libFiguras
             try
             {
                 fltPerimetro = 2f * fltLado1 + 2f * fltLado2;
+                guardar("rectangulo", "perimetro", fltPerimetro);
                 return true;
             }
             catch (Exception ex)
