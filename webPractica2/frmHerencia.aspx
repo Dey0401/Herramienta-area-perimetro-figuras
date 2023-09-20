@@ -49,25 +49,7 @@
             color: #FFFFFF;
             background-color: #FF0000;
         }
-        .auto-style13 {
-            color: #FFFFFF;
-            height: 26px;
-        }
-        .auto-style14 {
-            height: 26px;
-        }
-        .auto-style15 {
-            color: #FFFFFF;
-            height: 23px;
-        }
-        .auto-style16 {
-            height: 23px;
-        }
-        .auto-style18 {
-            color: #000000;
-            background-color: #CCFFFF;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -75,7 +57,7 @@
 
             <table align="center" class="auto-style1">
                 <tr>
-                    <td aria-atomic="True" class="auto-style3"><strong>Canculos Figuras Geometrizas 2D</strong></td>
+                    <td aria-atomic="True" class="auto-style3">Construccion</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -83,49 +65,74 @@
                 <tr>
                     <td>
                         <asp:RadioButtonList ID="rblFiguras" runat="server" RepeatDirection="Horizontal" style="color: #FFFFFF; background-color: #000000" Width="260px" AutoPostBack="True" OnSelectedIndexChanged="rblFiguras_SelectedIndexChanged">
-                            <asp:ListItem Selected="True" Value="opcTri">Triángulo</asp:ListItem>
-                            <asp:ListItem Value="opcRec">Rectángulo</asp:ListItem>
-                            <asp:ListItem Value="opcRom">Rombo</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="opcCasa">Casa</asp:ListItem>
+                            <asp:ListItem Value="opcRes">Residencial</asp:ListItem>
+                            <asp:ListItem Value="opcEdi">Edificio</asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Image ID="imgFiguras" runat="server" Width="25%" />
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-                        <asp:Label ID="lblMsj" runat="server" Text="[lblMsj]" Visible="False"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Panel ID="pnlTriangulo" runat="server">
+                        <asp:Panel ID="pnlCasa" runat="server">
                             <table align="center" class="auto-style6">
                                 <tr>
                                     <td class="auto-style8"></td>
                                     <td class="auto-style8"></td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style7">Lado A (c)</td>
+                                    <td class="auto-style7">Numero alcobas</td>
                                     <td class="auto-style7">
-                                        <asp:TextBox ID="txtLadoA" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtAlcobas" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style7">Lado B (b)</td>
+                                    <td class="auto-style7">Nombre propietario</td>
                                     <td class="auto-style7">
-                                        <asp:TextBox ID="txtLadoB" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtNombreProp" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style10">Angulo (A)</td>
+                                    <td class="auto-style10"></td>
                                     <td class="auto-style10">
-                                        <asp:TextBox ID="txtAngulo" runat="server"></asp:TextBox>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style7">&nbsp;</td>
+                                    <td class="auto-style7">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        <asp:Panel ID="pnlResidencial" runat="server" Visible="False">
+                            <table align="center" class="auto-style6">
+                                <tr>
+                                    <td class="auto-style8"></td>
+                                    <td class="auto-style8"></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style8">Numero de bloques</td>
+                                    <td class="auto-style8">
+                                        <asp:TextBox ID="txtNroBloques" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style7">Cerrada</td>
+                                    <td class="auto-style7">
+                                        <asp:CheckBox ID="chkCerrada" runat="server" OnCheckedChanged="chkCerrada_CheckedChanged" Text="si" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -138,57 +145,28 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Panel ID="pnlRectangulo" runat="server" Visible="False">
-                            <table align="center" class="auto-style6">
-                                <tr>
-                                    <td class="auto-style8"></td>
-                                    <td class="auto-style8"></td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style8">Lado 1 (a)</td>
-                                    <td class="auto-style8">
-                                        <asp:TextBox ID="txtLado1" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style7">Lado 2 (b)</td>
-                                    <td class="auto-style7">
-                                        <asp:TextBox ID="txtLado2" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style7">&nbsp;</td>
-                                    <td class="auto-style7">&nbsp;</td>
-                                </tr>
-                            </table>
-                        </asp:Panel>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">
-                        <asp:Panel ID="pnlRombo" runat="server" Visible="False">
+                        <asp:Panel ID="pnlEdificio" runat="server" Visible="False">
                             <table align="center" class="auto-style6">
                                 <tr>
                                     <td class="auto-style7">&nbsp;</td>
                                     <td class="auto-style7">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style7">Diagonal mayor (D)</td>
+                                    <td class="auto-style7">Numero de pisos</td>
                                     <td class="auto-style7">
-                                        <asp:TextBox ID="txtDiagMy" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtNroPisos" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style7">Diagonal menor (d)</td>
+                                    <td class="auto-style7">shut de basuras</td>
                                     <td class="auto-style7">
-                                        <asp:TextBox ID="txtDiagMn" runat="server"></asp:TextBox>
+                                        <asp:CheckBox ID="chkShut" runat="server" OnCheckedChanged="chkCerrada_CheckedChanged" Text="si" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style8">Lado (L)</td>
+                                    <td class="auto-style8">&nbsp;</td>
                                     <td class="auto-style8">
-                                        <asp:TextBox ID="txtLado" runat="server" ReadOnly="True"></asp:TextBox>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style7">&nbsp;</td>
@@ -203,7 +181,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnCalcular" runat="server" CssClass="auto-style11" OnClick="btnCalcular_Click" Text="Calcular" />
+                        <asp:Button ID="btnGuardar" runat="server" CssClass="auto-style11" OnClick="btnCalcular_Click" Text="Guardar" />
                     </td>
                 </tr>
                 <tr>
@@ -212,26 +190,6 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Panel ID="pnlRpta" runat="server" Visible="False">
-                            <table align="center" class="auto-style6">
-                                <tr>
-                                    <td class="auto-style13">Area</td>
-                                    <td class="auto-style14">
-                                        <asp:Label ID="lblArea" runat="server" CssClass="auto-style18" Width="90%"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style15">Perimetro</td>
-                                    <td class="auto-style16">
-                                        <asp:Label ID="lblPerim" runat="server" CssClass="auto-style18" Width="90%"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
-                                    </td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                            </table>
                         </asp:Panel>
                     </td>
                 </tr>

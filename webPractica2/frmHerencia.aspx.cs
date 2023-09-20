@@ -57,28 +57,28 @@ namespace webPractica2
         protected void rblFiguras_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiarDatos();
-            this.pnlTriangulo.Visible = false;
-            this.pnlRectangulo.Visible = false;
-            this.pnlRombo.Visible = false;
+            this.pnlCasa.Visible = false;
+            this.pnlResidencial.Visible = false;
+            this.pnlEdificio.Visible = false;
             intFig = this.rblFiguras.SelectedIndex + 1;
 
             switch (intFig)
             {
                 case 1:
                     cargarImagen("triangulo");
-                    this.pnlTriangulo.Visible = true;
-                    this.txtLadoA.Focus();
+                    this.pnlCasa.Visible = true;
+                    this.txtAlcobas.Focus();
                     break;
                 case 2:
                     cargarImagen("rectangulo");
-                    this.pnlRectangulo.Visible = true;
-                    this.txtLado1.Focus();
+                    this.pnlResidencial.Visible = true;
+                    this.txtNroBloques.Focus();
                     break;
 
                 default:
                     cargarImagen("rombo");
-                    this.pnlRombo.Visible = true;
-                    this.txtDiagMy.Focus();
+                    this.pnlEdificio.Visible = true;
+                    this.txtNroPisos.Focus();
                     break;
             }
         }
@@ -92,8 +92,8 @@ namespace webPractica2
                 switch (intFig)
                 {
                     case 1:
-                      vr1 = Convert.ToSingle(this.txtLadoA.Text);
-                      vr2 = Convert.ToSingle(this.txtLadoB.Text);
+                      vr1 = Convert.ToSingle(this.txtAlcobas.Text);
+                      vr2 = Convert.ToSingle(this.txtNombreProp.Text);
                       vr3 = Convert.ToSingle(this.txtAngulo.Text);
                       ClsTriangulo oT = new ClsTriangulo(vr1, vr2, vr3);
                         if (! oT.hallaArea() || ! oT.hallaPerimetro())
@@ -107,13 +107,13 @@ namespace webPractica2
                         oT = null;
                         break;
                     case 2:
-                        vr1 = Convert.ToSingle(this.txtLado1.Text);
+                        vr1 = Convert.ToSingle(this.txtNroBloques.Text);
 
                         break;
 
                     default:
                   
-                        this.txtDiagMy.Focus();
+                        this.txtNroPisos.Focus();
                         break;
                 }
                 this.lblArea.Text = vrArea.ToString();
@@ -131,6 +131,11 @@ namespace webPractica2
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             rblFiguras_SelectedIndexChanged(null, null);
+        }
+
+        protected System.Void chkCerrada_CheckedChanged(System.Object sender, System.EventArgs e)
+        {
+
         }
     }
     

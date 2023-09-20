@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace libFigura2D
+namespace libParcial2
 {
     public abstract class clsFgura2D
     {

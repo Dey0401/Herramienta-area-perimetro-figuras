@@ -31,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libClasifFiguras">
-      <HintPath>..\libClasifFiguras\bin\Debug\libClasifFiguras.dll</HintPath>
-    </Reference>
-    <Reference Include="libFigura2D">
-      <HintPath>..\libFigura2D\libFigura2D\bin\Debug\libFigura2D.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tiposFiguras.cs" />
+    <Compile Include="ClasifFiguras.cs" />
+    <Compile Include="clsFgura2D.cs" />
+    <Compile Include="clsParcial2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
